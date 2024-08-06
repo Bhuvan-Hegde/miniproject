@@ -24,19 +24,7 @@ h2{
 	margin-left: 20px;
 }
 
-#social-fb:hover {
-     color: #3B5998;
- }
- #social-tw:hover {
-     color: #4099FF;
- }
 
- #social-em:hover {
-     color: #f39c12;
- }
- #social-git:hover{
- 	color:black;
- }
 * {
     margin: 0;
 }
@@ -52,11 +40,7 @@ html, body {
     height: 155px; /* .push must be the same height as .footer */
 }
 
-/*.row.display-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-.thumbnail {
-  height: 100%;
-}*/
+
+
+
 

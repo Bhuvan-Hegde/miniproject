@@ -3,64 +3,81 @@
 
 <div class="container">
     <div class="col-xs-6 col-xs-offset-3">
-    	<form class="form-horizontal" role="search" method="get" action=''>
-         <div class="form-group">
-         <div class="input-group">	
-            <input type="text" class="form-control input-lg " name="q" value="{{ request.GET.q }}" placeholder= "Search Movies "/>
-            <span class='input-group-btn'>
-
-             <button class='btn btn-info btn-lg' type='submit'>Search
-             </button>
-         </span>
+        <form class="form-horizontal" role="search" method="get" action=''>
+            <div class="form-group">
+            <div class="input-group">	
+              <input type="text" class="form-control input-lg " name="q" value="{{ request.GET.q }}" placeholder= "Search Movies.......... " style="background-color: black;  border-radius: 25px 0 0 25px "/>
+               <span class='input-group-btn' style="border-color: black;">
+   
+                <button class='btn btn-info btn-lg' type='submit'  style="background-color: black; border:transparent; border-radius:0 25px 25px 0 ; padding: 10.5px; border:1px solid white;"><i class="fa-solid fa-magnifying-glass" ></i>
+                </button>
+            </span>
+           </div>
         </div>
-     </div>
-   </form>
-
- </div>
+      </form>
+   
+    </div>
 </div>  
-    {% if messages %}
-            <ul class="messages">
-            {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %} >{{ message }}</li>
-            {% endfor %}
-            </ul>
-    {% endif %}
-    <div class="container-fluid">
+{% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %} >{{ message }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+<div class="container-fluid">
     <div class="row">
         <div class="col-sm-2 col-md-3">
-		<h1>Movies List</h1>
+            <h1>Movies List</h1>
         </div>
-        <div class="col-xs-offset-9  mt-3">
-        <a href="{% url 'recommend' %}" class="btn"><strong><h2>Get Recommendation</h2></strong></a>
+        <div class="col-xs-offset-9 mt-3">
+            <a href="{% url 'recommend' %}" class="btn"><strong><h2 style="color: white; text-decoration: underline;">Get Recommendation</h2></strong></a>
         </div>
     </div>
-	</div>
-	<div class="container-fluid">
-    
+</div>
+<div class="container-fluid">
     <!-- Movie list -->
     <div class="row">
-            {% if movies %}
+        {% if movies %}
             {% for movie in movies %}
-                <div class="col-sm-2 col-md-2 ">
+                <div class="col-sm-2 col-md-2">
                     <div class="thumbnail">
-                        <h4>{{movie.title}}</h4>
+                        <h4>{{ movie.title }}</h4>
                         <a href="{% url 'detail' movie.id %}">
-                            <img src="{{ movie.movie_logo.url}}" class="img-responsive">
+                            <img src="{{ movie.movie_logo.url }}" class="img-responsive thumbnail-img" style="height: 280px;">
                         </a>
-                        <h5>{{movie.genre}}</h5>
+                        <h5>{{ movie.genre }}</h5>
                         <div class="caption">
-
                             <!-- View Details -->
-                            <a href="{% url 'detail' movie.id %}" class="btn btn-primary btn-sm" role="button">Give Rating</a>
-
-                                        
+                            <a href="{% url 'detail' movie.id %}" class="btn btn-primary btn-sm" style="background: #000000; border-radius: 25px; border: none;" role="button">Give Rating</a>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
-                {% endif %}
-        </div>
-    
+            {% endfor %}
+        {% endif %}
+    </div>
 </div>
+
+<style>
+.thumbnail {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.thumbnail h4, .thumbnail h5 {
+    margin: 10px 0;
+}
+
+.thumbnail-img {
+    width: 100%;
+    height: 250px; /* Adjust height as needed */
+    object-fit: cover;
+    border-radius: 15px;
+}
+</style>
 
 {% endblock %}

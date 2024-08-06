@@ -11,25 +11,43 @@
 	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' >
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='{% static "web/css/base.css" %}' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <style type="text/css">
+        #mainBody{
+            background-color: #282828;
+            color: white;
+        }
         .thumbnail p, .thumbnail h4 {
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
+            width: 100%;
             }
         .star-rating {
             line-height:32px;
             font-size:1.25em;
             }
-
+            .thumbnail{
+                background: rgba(255, 255, 255, 0.06);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(4.9px);
+                -webkit-backdrop-filter: blur(4.9px);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                
+            }
 
 
 .star-rating .fa-star{color: yellow;}
         
     </style>
 </head>
-<body>
+<body id="mainBody">
 	<nav class="navbar navbar-inverse">
                 <div class="container-fluid">
 
@@ -40,7 +58,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="">Movies</a>
+                        <a class="navbar-brand" href="{% url 'index' %}">Movies</a>
                     </div>
 
                     <!-- Items -->
