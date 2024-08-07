@@ -14,7 +14,7 @@
             {% if movie_list %}
             {% for movie in movie_list %}
                 <div class="col-sm-2 col-md-2 ">
-                    <div class="thumbnail">
+                    <div class="thumbnail" style="height: 380px;">
                         <h4>{{movie.title}}</h4>
                         <a href="{% url 'detail' movie.id %}">
                             <img src="{{ movie.movie_logo.url}}" class="img-responsive">
