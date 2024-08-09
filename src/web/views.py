@@ -68,6 +68,15 @@ def detail(request,movie_id):
 		return redirect("index")
 	return render(request,'web/detail.html',{'movies':movies})
 
+# Movie Information View
+def movieInfo(request, movie_id):
+	if not request.user.is_authenticated:
+		return redirect("login")
+	if not request.user.is_active:
+		raise Http404
+	movies = get_object_or_404(Movie,id=movie_id)
+	return render(request, 'web/movieInfo.html', {'movies':movies})
+
 
 # Register user
 def signUp(request):

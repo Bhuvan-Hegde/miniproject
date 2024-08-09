@@ -6,6 +6,11 @@ class Movie(models.Model):
 	title   	= models.CharField(max_length=200)
 	genre  		= models.CharField(max_length=100)
 	movie_logo  = models.FileField() 
+	storyline = models.CharField(max_length=700)
+	albuminfo = models.CharField(max_length=250)
+	cast = models.CharField(max_length=100)
+	director = models.CharField(max_length=25)
+	reference = models.CharField(max_length=100)
 
 	def __str__(self):
 		return self.title

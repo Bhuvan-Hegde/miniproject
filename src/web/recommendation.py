@@ -1,4 +1,3 @@
-"""
 import numpy as np 
 import pandas as pd
 from web.models import Myrating
@@ -69,33 +68,6 @@ def Myrecommend():
 
 
 
-
-
-
-#ctrl kc for comment , ctrl ku for uncomment
-"""
-import numpy as np 
-import pandas as pd
-from web.models import Myrating
-
-def Myrecommend():
-    # Load data from Django model
-    df = pd.DataFrame(list(Myrating.objects.all().values()))
-    
-    # Extract unique users and movies
-    users = df.user_id.unique()
-    movies = df.movie_id.unique()
-    
-    # Create a random prediction matrix with values between 1 and 5 (assuming a 5-star rating system)
-    prediction_matrix = np.random.randint(1, 6, size=(len(movies), len(users)))
-
-    # Create a dummy Ymean (not used in random recommendation but needed for function return signature)
-    Ymean = np.zeros((len(movies), 1))
-
-    return prediction_matrix, Ymean
-
-# Example of calling the function
-predictions, Ymean = Myrecommend()
 
 
 
