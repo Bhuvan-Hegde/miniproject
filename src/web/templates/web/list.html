@@ -44,9 +44,9 @@
                     <a href="{% url 'movieinfo' movie.id %}">
                         <div class="col-sm-2 col-md-2">
                             <div class="thumbnail">
-                                <h4 style="color: white;">{{ movie.title }}</h4>
+                                <h4 style="color: white; width: 220px;">{{ movie.title }}</h4>
                             <!--<a href="{% url 'detail' movie.id %}">-->
-                                <img src="{{ movie.movie_logo.url }}" class="img-responsive thumbnail-img" style="height: 280px;">
+                                <img src="{{ movie.movie_logo.url }}" class="img-responsive thumbnail-img" style="height: 280px;max-width: 200px;">
                             <!--</a>-->
                                 <h5 style="color: white;">{{ movie.genre }}</h5>
                                 <div class="caption">

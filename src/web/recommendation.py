@@ -64,11 +64,3 @@ def Myrecommend():
 	resX, resTheta = reshapeParams(result[0], mynm, mynu, mynf)
 	prediction_matrix = resX.dot(resTheta.T)
 	return prediction_matrix,Ymean
-	
-
-
-
-
-
-
-
