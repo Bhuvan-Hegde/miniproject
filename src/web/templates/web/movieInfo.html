@@ -1,0 +1,38 @@
+{% extends 'web/base.html'%}
+{% block title %}{{movies.title}}{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+    <div class="row" style="align-items: left; justify-content: center;">
+
+        <!-- Left Movie Info -->
+        <div class="col-md-3">
+            <div class="panel panel-default" style="border: none; background-color:transparent;">
+                <div class="panel-body">                           
+                    <img src="{{ movies.movie_logo.url}}" class="img-responsive">
+                    <h2></h2>
+                </div>
+            </div>
+        </div>
+        <!-- Right Movie Info -->
+        <div class="col-md-8" style="align-items: left; justify-content: center;">
+            <h1>{{movies.title}}</h1>
+            <h5 style="color: rgb(147, 145, 145);">{{movies.genre}}</h5>
+            <br/>
+            <p style="white-space: break-spaces;text-align: justify;">{{movies.storyline}}</p>
+            <br/>
+            <p style="white-space: break-spaces;text-align: justify;">{{movies.albuminfo}}</p>
+            <br/>
+            <p style="white-space: break-spaces;">Cast: {{movies.cast}}</p>
+            <p>Directed By: {{movies.director}}</p>
+            <br/>
+            {% if movies.reference %}
+                <a href="{{movies.reference}}" target="_blank">More on {{movies.title}}</a>
+            {% endif %}
+        </div>	
+    </div>
+</div>
+
+{% endblock %}
